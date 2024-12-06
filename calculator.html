@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator </title>
+    
+    <style> 
+    input[type = "button"]{
+        
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+        background:linear-gradient(#2f2f2f ,#3f3f3f);
+        color: rgb(227, 232, 236);
+        background-color: black;
+        border-style: none;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+        table{
+            height: 20px;
+            width: 150px;
+            color: black;
+            background-color: rgb(24, 23, 23);
+        }
+        .calculator {
+                color: black;
+                background-color: blur ;
+        }
+        
+    body{
+        display: flex;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        
+    }
+
+    input[type = "text"]{  
+
+        text-align:right;
+        -ms-text-size-adjust: 100ms;
+        width: 430px;
+        height: 90px;
+        margin: 1px;
+        background: linear-gradient(#55daa5 ,#18a80d);
+        box-shadow: #66776d;
+        border-style: none;
+        border-radius: 15px;
+        cursor: pointer;
+
+    color: blanchedalmond;
+    background-color:rgb(107, 164, 107);
+    }
+    input[button = "operator"]{
+        
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        margin: 20px;
+        background:linear-gradient(#2f2f2f ,#3f3f3f);
+
+        color: greenyellow;
+        background-color: black;
+        border-style: none;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    input[button = "equal"]{
+
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        margin: 2px;
+        background: linear-gradient(#2f2f2f ,#3f3f3f);
+
+        color: greenyellow;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: black;
+        border: none;
+    
+    }
+    input[button = "AllClear"]{
+
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        margin: 2px;
+        background: linear-gradient(#2f2f2f ,#3f3f3f);
+
+        color: rgb(228, 101, 16);
+        background-color: black;
+        border-style: none;
+        border-radius: 15px;
+        cursor: pointer;
+}
+    </style>
+    
+</head>
+<body>
+    <div class=" calculator"> 
+    <script> 
+        function pick(val){
+            document.getElementById("a").value +=val ;
+
+        }
+        function solve () {
+        var x =  document.getElementById("a").value  ;
+            var y = eval(x);
+            document.getElementById("a").value=y;
+
+        }
+        function clr() {
+        
+            document.getElementById("a").value = " ";
+
+        }
+        function DEL(){
+            var inputfield = document.getElementById("a");
+            inputfield.value=inputfield.value.slice(0,-1);
+
+            
+        }
+        
+    </script>
+            
+        
+    <table>
+        <tr> 
+            <div  colspan="4"> <input type="text" id="a" > </div>
+            
+        </tr>
+        <tr > 
+            <th > <input  button ="AllClear" value=" AC"  onclick = "clr()"></th>
+            <th > <input button ="operator" value=" DEL " onclick="DEL()"></th>
+            <th > <input button ="operator" value="-" onclick="pick ('-')"></th>
+            <th > <input button="operator" value= " = " onclick="solve('=')"></th>
+            
+        </tr>
+        <tr > 
+            
+            <th > <input type="button" value="9"  onclick = " pick (9)"></th>
+            <th > <input type="button" value="8 " onclick="pick(8)"></th>
+            <th > <input type="button" value="7 " onclick="pick(7)"></th>
+            <th > <input button = "equal" value= " + "  onclick="pick('+')"></th>
+            
+            
+
+        </tr>
+        <tr > 
+            <th > <input type="button" value="6"  onclick = " pick (6)"></th>
+            <th > <input type="button" value="5" onclick="pick(5)"></th>
+            <th > <input type="button" value="4 " onclick="pick(4)"></th>
+            <th > <input button="operator" value="* " onclick="pick ('* ')"></th>
+            
+            
+            
+
+        </tr>
+        <tr > 
+            <th > <input type="button" value="3"  onclick = " pick (3)"></th>
+            <th > <input type="button" value="2 " onclick="pick(2)"></th>
+            <th > <input type="button" value="1"  onclick = " pick (1)"></th>
+            <th > <input button ="operator" value="." onclick="pick (' . ')"></th>
+            
+            
+            
+            
+            
+
+        </tr>
+        <tr > 
+            <th > <input type="button" value="00 " onclick="pick('00')"></th>
+            <th > <input type ="button" value="0" onclick="pick (' 0')"></th>
+            <th > <input button ="operator" value="( " onclick="pick('(')"></th>
+            <th > <input button ="operator" value=") " onclick="pick(')')"></th>
+            
+            
+            
+            
+
+        </tr>
+        
+    </table>
+    
+</body>
+</html>
